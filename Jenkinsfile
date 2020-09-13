@@ -3,9 +3,15 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                echo 'come to clarusway'
-                sh 'echo Hello World'
+                echo 'Compiling the java source code'
+                sh 'javac Hello.java'
+            }
+        }
+        stage('run') {
+            steps {
+                echo 'Running the compiled java code.'
+                sh 'java Hello'
             }
         }
     }
-}
+}}
